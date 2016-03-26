@@ -42,20 +42,20 @@
 
 // Fill WRAPPERS
 // $mode is 'parent' or 'viewport'
-// $full is for fill width AND height
+// $fullH is for fill width AND height
 
-@mixin fill($mode, $full: false) {
+@mixin fill($mode, $fullH: false) {
 	@if ($mode == 'viewport') {
 		position: relative;
 		width: 100vw;
-		@if ($full) {
+		@if ($fullH) {
 			height: 100vh;
 		}
 	}
 	@if ($mode == 'parent') {
 		position: absolute;
 		width: 100%;
-		@if ($full) {
+		@if ($fullH) {
 			height: 100%;
 		}
 	}
