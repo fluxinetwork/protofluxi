@@ -15,7 +15,14 @@
 
 // SKILLS
 
+.skills {
+	ul {
+		@extend %list-reset;
+	}
+}
+
 .skills-categories {
 	@include fill('viewport');
 	display: flex;
 }
+

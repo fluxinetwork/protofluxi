@@ -7,12 +7,18 @@
 .nav {
 	@include fill('viewport');
 	position: fixed;
+	z-index: 10;
 	bottom: 0;
 }
 
 .navlist {
 	@extend %list-reset;
 }
+
+.navlist__item {
+	cursor: pointer;
+}
+
 
 @media screen and (min-width: $break--m) {
 

@@ -1,5 +1,5 @@
 /* generated with grunt-sass-globbing */
-.navlist {
+.navlist, .skills ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -200,7 +200,12 @@ p:first-child {
   position: relative;
   width: 100vw;
   position: fixed;
+  z-index: 10;
   bottom: 0;
+}
+
+.navlist__item {
+  cursor: pointer;
 }
 
 /*------------------------------*\
