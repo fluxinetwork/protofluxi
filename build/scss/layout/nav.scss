@@ -14,7 +14,6 @@
 
 .navlist {
 	@extend %list-reset;
-	@include flex(space-between);
 }
 
 .navlist__item {

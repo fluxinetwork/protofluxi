@@ -205,12 +205,6 @@ p:first-child {
   z-index: 1;
 }
 
-.navlist {
-  display: flex;
-  justify-content: space-between;
-  align-items: space-between;
-}
-
 .navlist__item {
   cursor: pointer;
 }
