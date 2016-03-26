@@ -1,4 +1,4 @@
-<header class="welcome">
+<header class="welcome" id="fluxi">
 	<h1>Fluxi</h1>
 	<h2>Par notre approche centrée utilisateur nous concevons des solutions digitales intuitives.</h2>
 </header>

@@ -1,4 +1,4 @@
-<article class="contact">
+<article class="contact" id="contact">
 	
 	<h2>Nous contacter</h2>
 
