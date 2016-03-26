@@ -4,6 +4,15 @@
 
 \*------------------------------*/
 
+.nav {
+	@include fill('viewport');
+	position: fixed;
+	bottom: 0;
+}
+
+.navlist {
+	@extend %list-reset;
+}
 
 @media screen and (min-width: $break--m) {
 

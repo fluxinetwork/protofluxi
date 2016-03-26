@@ -1,4 +1,10 @@
 /* generated with grunt-sass-globbing */
+.navlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 /* generated with grunt-sass-globbing */
 /*------------------------------*\
 
@@ -190,6 +196,13 @@ p:first-child {
     #NAV
 
 \*------------------------------*/
+.nav {
+  position: relative;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+}
+
 /*------------------------------*\
 
     #WRAPPERS
