@@ -11,7 +11,7 @@ function slider_intro() {
 		step++;
 		step>2 ? step=0 : step=step;
 		$('.big-word .word').eq(step).removeClass('is-out').addClass('is-active');
-	}, 2000);
+	}, 3000);
 }
 
 function nav_scroll_to() {
