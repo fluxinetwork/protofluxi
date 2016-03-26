@@ -1,8 +1,12 @@
 /* generated with grunt-sass-globbing */
-.navlist, .skills ul {
+.navlist, .controls, .skills ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.slides .slide, .controls .dot {
+  transition: all 0.2s ease-in-out;
 }
 
 /* generated with grunt-sass-globbing */
@@ -91,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 50px;
-  font-family: sans-serif;
+  font-family: "Avenir", "Helvetica Neue", sans-serif;
   font-weight: 900;
 }
 @media screen and (min-width: 480px) {
@@ -112,7 +116,7 @@ h1 {
 
 h2 {
   font-size: 24px;
-  font-family: sans-serif;
+  font-family: "Avenir", "Helvetica Neue", sans-serif;
 }
 @media screen and (min-width: 480px) {
   h2 {
@@ -121,18 +125,24 @@ h2 {
 }
 @media screen and (min-width: 760px) {
   h2 {
-    font-size: 32px;
+    font-size: 38px;
   }
 }
 @media screen and (min-width: 960px) {
   h2 {
-    font-size: 40px;
+    font-size: 50px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 65px;
+    line-height: 1.3;
   }
 }
 
 h3 {
   font-size: 18px;
-  font-family: sans-serif;
+  font-family: "Avenir", "Helvetica Neue", sans-serif;
 }
 @media screen and (min-width: 760px) {
   h3 {
@@ -147,7 +157,7 @@ h3 {
 
 h4 {
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: "Avenir", "Helvetica Neue", sans-serif;
   font-weight: 400;
 }
 @media screen and (min-width: 760px) {
@@ -223,15 +233,119 @@ p:first-child {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   position: relative;
   width: 100vw;
   height: 100vh;
-  text-align: center;
+}
+
+.fluxi-id {
+  padding: 0 10%;
+}
+.fluxi-id h1 {
+  display: none;
+}
+.fluxi-id img {
+  width: 180px;
+}
+.fluxi-id h2 {
+  margin-top: 1rem;
+  color: #4D4B74;
+  font-weight: 300;
+}
+.fluxi-id h2 br {
+  display: none;
+}
+
+.slides .slide {
+  display: none;
+}
+.slides .slide.is-active {
+  display: block;
+  animation: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards slideUp;
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+.controls {
+  display: flex;
+  margin-top: 1.2rem;
+}
+.controls .dot {
+  width: 10px;
+  height: 10px;
+  margin-right: 0.5rem;
+  background: #d9d8e6;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.controls .dot.is-active, .controls .dot:hover {
+  background: #4D4B74;
 }
 
 .skills-categories {
   position: relative;
   width: 100vw;
   display: flex;
+}
+
+@media screen and (min-width: 760px) and (max-width: 960px) {
+  .fluxi-id h2 {
+    max-width: 75%;
+  }
+}
+@media screen and (min-width: 760px) {
+  .fluxi-id img {
+    width: 250px;
+  }
+  .fluxi-id h2 {
+    margin-top: 1.8rem;
+  }
+
+  .controls {
+    margin-top: 1.8rem;
+  }
+  .controls .dot {
+    width: 15px;
+    height: 15px;
+    margin-right: 1rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  .fluxi-id img {
+    width: 300px;
+  }
+  .fluxi-id h2 {
+    margin-top: 2.4rem;
+  }
+  .fluxi-id h2 br {
+    display: block;
+  }
+
+  .controls {
+    margin-top: 2.4rem;
+  }
+  .controls .dot {
+    width: 20px;
+    height: 20px;
+    margin-right: 1.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .fluxi-id img {
+    width: 400px;
+  }
+  .fluxi-id h2 {
+    margin-top: 4rem;
+  }
+
+  .controls {
+    margin-top: 4rem;
+  }
 }

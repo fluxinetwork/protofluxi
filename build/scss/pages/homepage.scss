@@ -4,12 +4,80 @@
 
 \*------------------------------*/
 
+$space--xs: 0.75rem;
+$space--s: 1.2rem;
+$space--m: 1.8rem;
+$space--l: 2.4rem;
+$space--xl: 4rem;
+
 // WELCOME
 
 .welcome {
-	@include flex(center, true);
+	@include flex(center null, true);
 	@include fill('viewport', true);
-	text-align: center;
+}
+
+.fluxi-id {
+	padding: 0 10%;
+	
+	h1 {
+		display: none;
+	}
+	img {
+		width: 180px;
+	}
+	h2 {
+		margin-top: 1rem;
+		color: $c-main;
+		font-weight: 300;
+
+		br {
+			display: none;
+		}
+	}
+}
+
+.slides {
+
+	.slide {
+		@extend %transition;
+		display: none;
+
+		&.is-active {
+			display: block;
+			animation: 0.4s $ease-out-quart 1 forwards slideUp;
+		}
+		@keyframes slideUp {
+			0% {
+				opacity: 0;
+				transform: translateY(20%);
+			};
+			100% {
+				opacity: 1;
+				transform: translateY(0%);
+			}
+		}
+	}
+}
+
+.controls {
+	display: flex;
+	@extend %list-reset;
+	margin-top: $space--s;
+
+	.dot {
+		@extend %transition;
+		width: 10px;
+		height: 10px;
+		margin-right: 0.5rem;
+		background: lighten($c-main, 50%);
+		border-radius: 50%;
+		cursor: pointer;
+
+		&.is-active, &:hover {
+			background: $c-main;
+		}
+	}
 }
 
 
@@ -24,5 +92,76 @@
 .skills-categories {
 	@include fill('viewport');
 	display: flex;
+}
+
+
+// MEDIA QUERIES
+
+@media screen and (min-width: $break--m) and (max-width: $break--l) {
+	.fluxi-id h2 {
+		max-width: 75%;
+	}
+}
+
+@media screen and (min-width: $break--m) {
+	.fluxi-id {
+		img {
+			width: 250px;
+		}
+		h2 {
+			margin-top: $space--m;
+		}
+	}
+
+	.controls {
+		margin-top: $space--m;
+
+		.dot {
+			width: 15px;
+			height: 15px;
+			margin-right: 1rem;
+		}
+	}
+}
+
+@media screen and (min-width: $break--l) {
+	.fluxi-id {
+		img {
+			width: 300px;
+		}
+		h2{
+			margin-top: $space--l;
+
+			br {
+				display: block;
+			}
+		}
+	}
+
+	.controls {
+		margin-top: $space--l;
+
+		.dot {
+			width: 20px;
+			height: 20px;
+			margin-right: 1.5rem;
+		}
+	}
+}
+
+@media screen and (min-width: $break--xl) {
+	.fluxi-id {
+		img {
+			width: 400px;
+		}
+
+		h2 {
+			margin-top: $space--xl;
+		}
+	}
+
+	.controls {
+		margin-top: $space--xl;
+	}
 }
 

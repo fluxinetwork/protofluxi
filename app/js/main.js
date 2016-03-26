@@ -1,6 +1,16 @@
 $(document).ready(function(){
-	
+	slider_intro();
 });
+
+function slider_intro() {
+	$('.controls .dot').on('click', function(){
+		$('.controls .dot').removeClass('is-active');
+		$(this).addClass('is-active');
+
+		$('.slide.is-active').removeClass('is-active');
+		$('.slide').eq($('.dot.is-active').index()).addClass('is-active');
+	})
+}
 
 /* Scroll to */
 

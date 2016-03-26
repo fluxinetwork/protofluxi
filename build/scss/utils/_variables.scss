@@ -4,7 +4,7 @@ $breakpoints: (
   small: 480px,
   medium: 760px, 
   large: 960px,
-  xlarge: 1200,
+  xlarge: 1200px,
 );
 
 $break--s : map-get($breakpoints, small);
@@ -15,7 +15,7 @@ $break--xl : map-get($breakpoints, xlarge);
 
 // TYPO
 
-$font-h: sans-serif;
+$font-h: 'Avenir', 'Helvetica Neue', sans-serif;
 $font-txt: serif;
 $font-bt: sans-serif;
 
@@ -25,9 +25,9 @@ $font-base-lh: 1.4;
 
 // COLORS
 
-$c-main: blue;
-$c-hover: green;
-$c-special: orange;
+$c-main: #4D4B74;
+$c-highlight: #2AD6CC;
+$c-hover: $c-highlight;
 $c-warning: red;
 
 $c-txt: grey;
