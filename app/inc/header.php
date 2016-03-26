@@ -8,6 +8,6 @@
 
 	<div class="wrap-main">
 
-		<?php include( TEMPLATEPATH.'/app/inc/nav.php' ); ?>
+		<?php include('app/inc/nav.php' ); ?>
 
 		<div class="wrap-content">

@@ -30,16 +30,14 @@ module.exports = function (grunt) {
 		          require('cssnano')()
 		        ]
 			},
-			main: [{
-			  expand: true,
-			  flatten: true,
+			dist: [{
 			  src: 'app/css/main.css',
 			  dest: 'app/css/main.min.css'
 			}]
-         },
+        },
 
 		sass: {
-	        main: {
+	        dist: {
 	        	options : {
 	    	        style: 'expanded',
 	    	        sourcemap: 'none'
@@ -63,12 +61,11 @@ module.exports = function (grunt) {
 		        useSingleQuotes: false
 		      }
 		    }
-		  }
-
+		}
 
 	});
 
-	grunt.registerTask('css', ['sass_globbing:target','sass:main']);
+	grunt.registerTask('css', ['sass_globbing:target','sass']);
 	grunt.registerTask('default', ['css']);
 
 }

@@ -1,10 +1,10 @@
-		    </div><!-- .wrap-content --> 
+		</div>
 
-			<footer></footer>
+		<footer></footer>
 		    
-    </div><!-- .wrap-main --> 
+	</div>
 
-    <script type="text/javascript" src="app/js/main.js"></script>
+	<script type="text/javascript" src="app/js/main.js"></script>
 	
 </body>
 
