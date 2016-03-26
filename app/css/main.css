@@ -1,11 +1,11 @@
 /* generated with grunt-sass-globbing */
-.navlist, .controls, .skills ul {
+.navlist, .skills ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.navlist__item, .navlist__item::before, .slide, .controls .dot {
+.navlist__item, .navlist__item::before, .big-word .word {
   transition: all 0.2s ease-in-out;
 }
 
@@ -133,12 +133,6 @@ h2 {
     font-size: 50px;
   }
 }
-@media screen and (min-width: 1200px) {
-  h2 {
-    font-size: 65px;
-    line-height: 1.3;
-  }
-}
 
 h3 {
   font-size: 18px;
@@ -213,7 +207,7 @@ p:first-child {
   position: fixed;
   z-index: 100;
   bottom: 0;
-  padding-left: 10%;
+  padding: 0 10%;
   background: #303149;
 }
 
@@ -256,7 +250,7 @@ p:first-child {
   align-items: center;
   font: 14px "Avenir", "Helvetica Neue", sans-serif;
   height: 50px;
-  padding: 0 1.2rem;
+  padding: 0 1rem;
   color: #fff;
 }
 
@@ -268,15 +262,16 @@ p:first-child {
 
   .nav__logo {
     height: 70px;
+    margin-right: auto;
   }
 
   .fluxi-f {
     width: 18px;
-    margin-right: 2.4rem;
+    margin-right: 1.7rem;
   }
 
   .navlist__item {
-    margin-left: 1.2rem;
+    margin-left: 1rem;
   }
   .navlist__item a {
     font-size: 20px;
@@ -298,15 +293,17 @@ p:first-child {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: relative;
   width: 100vw;
   height: 100vh;
 }
 
 .fluxi-id {
-  position: relative;
-  z-index: 10;
   padding: 0 10%;
+  width: 100%;
+  position: relative;
+  z-index: 50;
 }
 .fluxi-id h1 {
   display: none;
@@ -323,125 +320,86 @@ p:first-child {
   display: none;
 }
 
-.slide {
-  display: none;
+.big-word {
+  position: relative;
+  width: 100%;
+  margin-top: 1.3rem;
+}
+.big-word .word {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-right: 10%;
   opacity: 0;
+  font-size: 100px;
+  font-weight: 100;
+  color: #d5f7f5;
+  font-family: 'Avenir Next';
+  text-align: right;
 }
-.slide.is-active {
-  display: block;
+.big-word .word.is-active {
+  animation: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) 1 0.3s forwards slideFromLeft !important;
+}
+.big-word .word.is-out {
+  animation: 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards slideRight !important;
 }
 
-#slider-slogan .slide.is-active {
-  animation: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards slideUp !important;
-}
-
-#slider-word .slide.is-active {
-  animation: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) 1 0s forwards slideUp !important;
-}
-
-@keyframes slideUp {
+@keyframes slideFromLeft {
   0% {
     opacity: 0;
-    transform: translateY(20%);
+    transform: translateY(60%);
   }
   100% {
     opacity: 1;
     transform: translateY(0%);
   }
 }
-.controls {
-  display: none;
-  margin-top: 1.2rem;
+@keyframes slideRight {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
 }
-.controls .dot {
-  width: 10px;
-  height: 10px;
-  margin-right: 0.5rem;
-  background: #aeafca;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.controls .dot.is-active, .controls .dot:hover {
-  background: #303149;
-}
-
-.big-word {
-  position: absolute;
-  font-size: 100px;
-  font-weight: 100;
-  color: #d5f7f5;
-  left: 10%;
-  bottom: 10%;
-  font-family: 'Avenir Next';
-  display: none;
-}
-
 .skills-categories {
   position: relative;
   width: 100vw;
   display: flex;
 }
 
-@media screen and (min-width: 760px) and (max-width: 960px) {
-  .fluxi-id h2 {
-    max-width: 75%;
-  }
-}
 @media screen and (min-width: 760px) {
   .fluxi-id img {
-    width: 200px;
+    width: 150px;
   }
   .fluxi-id h2 {
-    margin-top: 1.8rem;
-  }
-
-  .controls {
-    margin-top: 1.8rem;
-  }
-  .controls .dot {
-    width: 15px;
-    height: 15px;
-    margin-right: 1rem;
-  }
-
-  .big-word {
-    display: block;
+    margin-top: 1.3rem;
   }
 }
 @media screen and (min-width: 960px) {
   .fluxi-id img {
-    width: 250px;
+    width: 200px;
   }
   .fluxi-id h2 {
-    margin-top: 2.4rem;
+    margin-top: 1.7rem;
   }
   .fluxi-id h2 br {
     display: block;
   }
 
-  .controls {
-    margin-top: 2.4rem;
-  }
-  .controls .dot {
-    width: 18px;
-    height: 18px;
-    margin-right: 1.5rem;
-  }
-
-  .big-word {
+  .big-word .word {
     font-size: 120px;
   }
 }
 @media screen and (min-width: 1200px) {
   .fluxi-id h2 {
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
 
-  .controls {
-    margin-top: 4rem;
-  }
-
-  .big-word {
+  .big-word .word {
     font-size: 150px;
   }
 }

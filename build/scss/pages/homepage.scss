@@ -7,14 +7,15 @@
 // WELCOME
 
 .welcome {
-	@include flex(center null, true);
+	@include flex(center, true);
 	@include fill('viewport', true);
 }
 
 .fluxi-id {
-	position: relative;
-	z-index: 10;
 	padding: 0 10%;
+	width: 100%;
+	position: relative;
+	z-index: 50;
 	
 	h1 {
 		display: none;
@@ -33,62 +34,52 @@
 	}
 }
 
-.slide {
-	@extend %transition;
-	display: none;
-	opacity: 0;
+.big-word  {
+	position: relative;
+	width: 100%;
+	margin-top: $space--m;
 
-	&.is-active {
-		display: block;
+	.word {
+		@extend %transition;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding-right: 10%;
+		opacity: 0;
+		font-size: 100px;
+		font-weight: 100;
+		color: lighten($c-highlight, 40%);
+		font-family: 'Avenir Next';
+		text-align: right;
+
+		&.is-active {
+			animation: 0.8s $ease-out-quart 1 0.3s forwards slideFromLeft !important;
+		}
+		&.is-out {
+			animation: 2.5s $ease-out-quart 1 forwards slideRight !important;
+		}
 	}
 }
-
-#slider-slogan .slide.is-active {
-	animation: 0.4s $ease-out-quart 1 forwards slideUp !important;
-}
-#slider-word .slide.is-active {
-	animation: 0.8s $ease-out-quart 1 0s forwards slideUp !important;
-}
-@keyframes slideUp {
+@keyframes slideFromLeft {
 	0% {
 		opacity: 0;
-		transform: translateY(20%);
+		transform: translateY(60%);
 	};
 	100% {
 		opacity: 1;
 		transform: translateY(0%);
 	}
 }
-
-.controls {
-	display: none;
-	@extend %list-reset;
-	margin-top: $space--s;
-
-	.dot {
-		@extend %transition;
-		width: 10px;
-		height: 10px;
-		margin-right: 0.5rem;
-		background: lighten($c-main, 50%);
-		border-radius: 50%;
-		cursor: pointer;
-
-		&.is-active, &:hover {
-			background: $c-main;
-		}
+@keyframes slideRight {
+	0% {
+		opacity: 1;
+		transform: translateY(0%);
+	};
+	100% {
+		opacity: 0;
+		transform: translateY(-100%);
 	}
-}
-
-.big-word {
-	position: absolute;
-	font-size: 100px;
-	font-weight: 100;
-	color: lighten($c-highlight, 40%);
-	left: 10%;
-	bottom: 10%;
-	font-family: 'Avenir Next';
-	display: none;
 }
 
 
@@ -108,41 +99,22 @@
 
 // MEDIA QUERIES
 
-@media screen and (min-width: $break--m) and (max-width: $break--l) {
-	.fluxi-id h2 {
-		max-width: 75%;
-	}
-}
 
 @media screen and (min-width: $break--m) {
 	.fluxi-id {
 		img {
-			width: 200px;
+			width: 150px;
 		}
 		h2 {
 			margin-top: $space--m;
 		}
-	}
-
-	.controls {
-		margin-top: $space--m;
-
-		.dot {
-			width: 15px;
-			height: 15px;
-			margin-right: 1rem;
-		}
-	}
-
-	.big-word {
-		display: block;
 	}
 }
 
 @media screen and (min-width: $break--l) {
 	.fluxi-id {
 		img {
-			width: 250px;
+			width: 200px;
 		}
 		h2{
 			margin-top: $space--l;
@@ -153,17 +125,7 @@
 		}
 	}
 
-	.controls {
-		margin-top: $space--l;
-
-		.dot {
-			width: 18px;
-			height: 18px;
-			margin-right: 1.5rem;
-		}
-	}
-
-	.big-word {
+	.big-word .word {
 		font-size: 120px;
 	}
 
@@ -177,11 +139,7 @@
 		}
 	}
 
-	.controls {
-		margin-top: $space--xl;
-	}
-
-	.big-word {
+	.big-word .word {
 		font-size: 150px;
 	}
 }

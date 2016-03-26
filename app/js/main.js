@@ -5,22 +5,13 @@ $(document).ready(function(){
 
 
 function slider_intro() {
-	var step = 1;
+	var step = 0;
 	setInterval(function(){
-		$('.controls .dot').eq(step).click();
+		$('.big-word .word').eq(step).addClass('is-out');
 		step++;
 		step>2 ? step=0 : step=step;
+		$('.big-word .word').eq(step).removeClass('is-out').addClass('is-active');
 	}, 2000);
-
-	$('.controls .dot').on('click', function(){
-		$('.controls .dot').removeClass('is-active');
-		$(this).addClass('is-active');
-
-		$('#slider-word .slide.is-active').removeClass('is-active');
-		var index = $('.dot.is-active').index();
-		//$('#slider-slogan .slide').eq(index).addClass('is-active');
-		$('#slider-word .slide').eq(index).addClass('is-active');
-	})
 }
 
 function nav_scroll_to() {
