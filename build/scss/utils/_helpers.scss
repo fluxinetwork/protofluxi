@@ -1,0 +1,33 @@
+////////////////////////
+////// HELPERS /////////
+////////////////////////
+
+
+// LAYOUT
+
+%clearfix {
+   *zoom: 1;
+   &:before, &:after {
+       content: " ";
+       display: table;
+   }
+   &:after {
+       clear: both;
+   }
+}
+
+
+// ELEMENTS
+
+%list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+// EFFECTS
+
+%transition {
+  transition: all 0.2s ease-in-out;
+}

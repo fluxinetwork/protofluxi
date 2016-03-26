@@ -1,0 +1,11 @@
+// FUNCTIONS
+
+@charset "UTF-8";
+
+@function unpack-duo($shorthand) {
+	@if length($shorthand) == 1 {
+		@return nth($shorthand, 1) nth($shorthand, 1);
+	} @else if length($shorthand) == 2 {
+		@return nth($shorthand, 1) nth($shorthand, 2);
+	}
+}

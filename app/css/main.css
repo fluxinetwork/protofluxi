@@ -1,0 +1,184 @@
+/* generated with grunt-sass-globbing */
+/* generated with grunt-sass-globbing */
+/*------------------------------*\
+
+    #CLASS
+
+\*------------------------------*/
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+/*------------------------------*\
+
+    #RESET
+
+\*------------------------------*/
+/* Ultra light reset */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button, input, select, textarea {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+svg {
+  max-height: 100%;
+}
+
+a {
+  text-decoration: none;
+  outline: 0;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+/* Better box-sizing */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*------------------------------*\
+
+    #TYPOGRAPHY
+
+\*------------------------------*/
+body {
+  font: 11.42857px serif;
+  color: grey;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: sans-serif;
+  font-weight: 900;
+}
+@media screen and (min-width: 480px) {
+  h1 {
+    font-size: 55px;
+  }
+}
+@media screen and (min-width: 760px) {
+  h1 {
+    font-size: 65px;
+  }
+}
+@media screen and (min-width: 960px) {
+  h1 {
+    font-size: 85px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+@media screen and (min-width: 480px) {
+  h2 {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 760px) {
+  h2 {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 960px) {
+  h2 {
+    font-size: 40px;
+  }
+}
+
+h3 {
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+@media screen and (min-width: 760px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 960px) {
+  h3 {
+    font-size: 24px;
+  }
+}
+
+p {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+@media screen and (min-width: 760px) {
+  p {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 960px) {
+  p {
+    font-size: 20px;
+  }
+}
+p:first-child {
+  margin-top: 0;
+}
+
+/* generated with grunt-sass-globbing */
+/*------------------------------*\
+
+    #BUTTONS
+
+\*------------------------------*/
+/* generated with grunt-sass-globbing */
+/*------------------------------*\
+
+    #FOOTER
+
+\*------------------------------*/
+/*------------------------------*\
+
+    #NAV
+
+\*------------------------------*/
+.nav {
+  display: none;
+}
+
+/*------------------------------*\
+
+    #WRAPPERS
+
+\*------------------------------*/
+/* generated with grunt-sass-globbing */
+/*------------------------------*\
+
+    #HOMEPAGE
+
+\*------------------------------*/

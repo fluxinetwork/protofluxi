@@ -1,0 +1,87 @@
+// MIXINS
+
+// Display FLEX
+// $positions are justify-content and align-items properties
+// If only one is passed, will be used for the two properties
+
+@mixin flex($positions: null null, $direction: null) {
+	display: flex;
+	@if ($direction) {
+		flex-direction: column;
+	}
+	
+	$positions: unpack-duo($positions);
+
+	$flex-positions: (
+		justify-content: nth($positions, 1),
+		align-items: nth($positions, 2)
+	);
+
+	@each $flex-position, $position in $flex-positions {
+		@if ($position != null) {
+			#{$flex-position}: $position;
+		}
+	}
+}
+
+
+// Pseudo BG
+// For making a background with :before or :after pseudo-selectors
+// Parent element should be positioned
+
+@mixin pseudo_bg($color: #000, $opacity: 1) {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba($color, $opacity);
+}
+
+
+// Fill WRAPPERS
+// $mode is 'parent' or 'viewport'
+// $full is for fill width AND height
+
+@mixin fill($mode, $full: false) {
+	@if ($mode == 'viewport') {
+		position: relative;
+		width: 100vw;
+		@if ($full) {
+			height: 100vh;
+		}
+	}
+	@if ($mode == 'parent') {
+		position: absolute;
+		width: 100%;
+		@if ($full) {
+			height: 100%;
+		}
+	}
+}
+
+
+// Responsive typo with maps
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+
+
+
+
