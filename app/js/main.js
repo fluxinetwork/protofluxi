@@ -5,12 +5,21 @@ $(document).ready(function(){
 
 
 function slider_intro() {
+	var step = 1;
+	setInterval(function(){
+		$('.controls .dot').eq(step).click();
+		step++;
+		step>2 ? step=0 : step=step;
+	}, 2000);
+
 	$('.controls .dot').on('click', function(){
 		$('.controls .dot').removeClass('is-active');
 		$(this).addClass('is-active');
 
-		$('.slide.is-active').removeClass('is-active');
-		$('.slide').eq($('.dot.is-active').index()).addClass('is-active');
+		$('#slider-word .slide.is-active').removeClass('is-active');
+		var index = $('.dot.is-active').index();
+		//$('#slider-slogan .slide').eq(index).addClass('is-active');
+		$('#slider-word .slide').eq(index).addClass('is-active');
 	})
 }
 

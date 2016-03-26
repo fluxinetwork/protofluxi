@@ -4,24 +4,86 @@
 
 \*------------------------------*/
 
+$h--s: 50px;
+$h--m: 70px;
+
 .nav {
 	@include fill('viewport');
+	display: flex;
 	position: fixed;
-	z-index: 10;
+	z-index: 100;
 	bottom: 0;
-	z-index:1;
+	padding-left: 10%;
+	background: $c-main;
+}
+
+.nav__logo {
+	height: $h--s;
+	@include flex(null center);
+}
+.fluxi-f {
+	width: 12px;
+	margin-right: $space--xs;
 }
 
 .navlist {
 	@extend %list-reset;
+	display: flex;
 }
 
 .navlist__item {
+	@extend %transition;
 	cursor: pointer;
+	position: relative;
+
+	&::before {
+		@extend %transition;
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 0;
+		height: 5px;
+		background: $c-highlight;
+	}
+
+	&.is-active, &:hover {
+		background: lighten($c-main, 4%);
+
+		&::before {
+			width: 100%;
+		}
+	}
+
+	a {
+		@include flex(center);
+		font: 14px $font-h;
+		height: $h--s;
+		padding: 0 $space--s;
+		color: #fff;
+	}
 }
 
 
 @media screen and (min-width: $break--m) {
+	.nav {
+		top: 0;
+		bottom: auto;
+	}
+	
+	.nav__logo {
+		height: $h--m;
+	}
+	.fluxi-f {
+		width: 18px;
+		margin-right: $space--l;
+	}
 
+	.navlist__item {
+		margin-left: $space--s;
+		a {
+			font-size: 20px;
+			height: $h--m;
+		}
+	}
 }
 

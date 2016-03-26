@@ -5,7 +5,7 @@
   list-style: none;
 }
 
-.slides .slide, .controls .dot {
+.navlist__item, .navlist__item::before, .slide, .controls .dot {
   transition: all 0.2s ease-in-out;
 }
 
@@ -209,16 +209,80 @@ p:first-child {
 .nav {
   position: relative;
   width: 100vw;
+  display: flex;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   bottom: 0;
-  z-index: 1;
+  padding-left: 10%;
+  background: #303149;
+}
+
+.nav__logo {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.fluxi-f {
+  width: 12px;
+  margin-right: 0.75rem;
+}
+
+.navlist {
+  display: flex;
 }
 
 .navlist__item {
   cursor: pointer;
+  position: relative;
+}
+.navlist__item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 5px;
+  background: #2AD6CC;
+}
+.navlist__item.is-active, .navlist__item:hover {
+  background: #383955;
+}
+.navlist__item.is-active::before, .navlist__item:hover::before {
+  width: 100%;
+}
+.navlist__item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 14px "Avenir", "Helvetica Neue", sans-serif;
+  height: 50px;
+  padding: 0 1.2rem;
+  color: #fff;
 }
 
+@media screen and (min-width: 760px) {
+  .nav {
+    top: 0;
+    bottom: auto;
+  }
+
+  .nav__logo {
+    height: 70px;
+  }
+
+  .fluxi-f {
+    width: 18px;
+    margin-right: 2.4rem;
+  }
+
+  .navlist__item {
+    margin-left: 1.2rem;
+  }
+  .navlist__item a {
+    font-size: 20px;
+    height: 70px;
+  }
+}
 /*------------------------------*\
 
     #WRAPPERS
@@ -240,6 +304,8 @@ p:first-child {
 }
 
 .fluxi-id {
+  position: relative;
+  z-index: 10;
   padding: 0 10%;
 }
 .fluxi-id h1 {
@@ -250,20 +316,29 @@ p:first-child {
 }
 .fluxi-id h2 {
   margin-top: 1rem;
-  color: #4D4B74;
+  color: #303149;
   font-weight: 300;
 }
 .fluxi-id h2 br {
   display: none;
 }
 
-.slides .slide {
+.slide {
   display: none;
+  opacity: 0;
 }
-.slides .slide.is-active {
+.slide.is-active {
   display: block;
-  animation: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards slideUp;
 }
+
+#slider-slogan .slide.is-active {
+  animation: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards slideUp !important;
+}
+
+#slider-word .slide.is-active {
+  animation: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) 1 0s forwards slideUp !important;
+}
+
 @keyframes slideUp {
   0% {
     opacity: 0;
@@ -275,19 +350,30 @@ p:first-child {
   }
 }
 .controls {
-  display: flex;
+  display: none;
   margin-top: 1.2rem;
 }
 .controls .dot {
   width: 10px;
   height: 10px;
   margin-right: 0.5rem;
-  background: #d9d8e6;
+  background: #aeafca;
   border-radius: 50%;
   cursor: pointer;
 }
 .controls .dot.is-active, .controls .dot:hover {
-  background: #4D4B74;
+  background: #303149;
+}
+
+.big-word {
+  position: absolute;
+  font-size: 100px;
+  font-weight: 100;
+  color: #d5f7f5;
+  left: 10%;
+  bottom: 10%;
+  font-family: 'Avenir Next';
+  display: none;
 }
 
 .skills-categories {
@@ -303,7 +389,7 @@ p:first-child {
 }
 @media screen and (min-width: 760px) {
   .fluxi-id img {
-    width: 250px;
+    width: 200px;
   }
   .fluxi-id h2 {
     margin-top: 1.8rem;
@@ -317,10 +403,14 @@ p:first-child {
     height: 15px;
     margin-right: 1rem;
   }
+
+  .big-word {
+    display: block;
+  }
 }
 @media screen and (min-width: 960px) {
   .fluxi-id img {
-    width: 300px;
+    width: 250px;
   }
   .fluxi-id h2 {
     margin-top: 2.4rem;
@@ -333,20 +423,25 @@ p:first-child {
     margin-top: 2.4rem;
   }
   .controls .dot {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     margin-right: 1.5rem;
+  }
+
+  .big-word {
+    font-size: 120px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .fluxi-id img {
-    width: 400px;
-  }
   .fluxi-id h2 {
     margin-top: 4rem;
   }
 
   .controls {
     margin-top: 4rem;
+  }
+
+  .big-word {
+    font-size: 150px;
   }
 }

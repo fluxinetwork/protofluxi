@@ -25,7 +25,7 @@ $font-base-lh: 1.4;
 
 // COLORS
 
-$c-main: #4D4B74;
+$c-main: #303149;
 $c-highlight: #2AD6CC;
 $c-hover: $c-highlight;
 $c-warning: red;
@@ -33,6 +33,15 @@ $c-warning: red;
 $c-txt: grey;
 $c-txt-light: lightgrey;
 $c-txt-dark: darkgrey;
+
+
+// SPACES
+
+$space--xs: 0.75rem;
+$space--s: 1.2rem;
+$space--m: 1.8rem;
+$space--l: 2.4rem;
+$space--xl: 4rem;
 
 
 
