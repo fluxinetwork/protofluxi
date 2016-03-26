@@ -10,4 +10,4 @@
 
 		<?php include('app/inc/nav.php' ); ?>
 
-		<div class="wrap-content">
+		<section class="wrap-content">

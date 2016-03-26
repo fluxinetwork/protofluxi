@@ -1,5 +1,5 @@
-<section class="skills">
-	<header class="section-header">
+<article class="skills">
+	<header class="article-header">
 		<h4>Proin arcu purus, congue ac dapibus non, imperdiet eu velit. In mattis nunc risus, congue rutrum justo egestas eget. Curabitur a justo sed sapien dictum aliquam. Donec laoreet pulvinar nisl sed dapibus. Pellentesque id magna convallis, pharetra tortor sed, mollis nulla.</h4>
 	</header>
 	
@@ -37,4 +37,4 @@
 			</ul>
 		</li>
 	</ul>
-</section>
+</article>

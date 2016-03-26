@@ -1,4 +1,4 @@
-		</div>
+		</section>
 
 		<footer></footer>
 		    
