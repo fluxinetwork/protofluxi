@@ -3,3 +3,19 @@
     #HOMEPAGE
 
 \*------------------------------*/
+
+// WELCOME
+
+.welcome {
+	@include flex(center, true);
+	@include fill('viewport', true);
+	text-align: center;
+}
+
+
+// SKILLS
+
+.skills-categories {
+	@include fill('viewport');
+	display: flex;
+}

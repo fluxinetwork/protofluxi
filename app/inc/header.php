@@ -3,6 +3,7 @@
 <head>
 	<title>Fluxi</title>
 	<link rel="stylesheet" type="text/css" href="app/css/main.css">
+	<script type="text/javascript" src="app/js/vendors/jquery-1.11.3.min.js"></script>
 </head>
 <body>
 

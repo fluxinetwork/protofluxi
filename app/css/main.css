@@ -61,6 +61,15 @@ html {
 
 /*------------------------------*\
 
+    #TAG
+
+\*------------------------------*/
+body {
+  overflow-x: hidden;
+}
+
+/*------------------------------*\
+
     #TYPOGRAPHY
 
 \*------------------------------*/
@@ -192,3 +201,19 @@ p:first-child {
     #HOMEPAGE
 
 \*------------------------------*/
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.skills-categories {
+  position: relative;
+  width: 100vw;
+  display: flex;
+}
