@@ -1,4 +1,5 @@
-<header class="welcome">
+
+<header class="welcome" id="fluxi">
 	<div class="fluxi-id">
 		<img src="app/img/fluxi-logo.svg" alt="Fluxi logo">
 		<h1>Fluxi</h1>
