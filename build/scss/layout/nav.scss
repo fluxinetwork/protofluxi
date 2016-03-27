@@ -4,29 +4,35 @@
 
 \*------------------------------*/
 
-$h--s: 40px;
+$h--s: 50px;
 $h--m: 60px;
 
+$c-ultra-light: lighten($c-highlight, 40%);
+
 .nav {
-	@include fill('viewport');
+	@include fill('parent');
 	display: flex;
 	position: fixed;
 	z-index: 100;
 	bottom: 0;
 	padding: 0 $pd;
-	border-bottom: 1px solid lighten($c-highlight, 40%);
+	border-top: 1px solid $c-ultra-light;
 	background: #fff;
+	overflow: hidden;
 }
 
 .nav__logo {
+	@extend %transition;
 	height: $h--s;
 	@include flex(null center);
 	visibility: hidden;
 	opacity: 0;
+	transform: translateY(200px);
 
 	&.is-active {
 		visibility: visible;
 		opacity: 1;
+		transform: translateY(0);
 	}
 }
 .fluxi-f {
@@ -63,7 +69,7 @@ $h--m: 60px;
 
 	a {
 		@include flex(center);
-		font: 700 9px $font-h;
+		font: 700 10px $font-h;
 		height: $h--s;
 		padding: 0 $space--m;
 		color: $c-main;
@@ -72,11 +78,25 @@ $h--m: 60px;
 }
 
 
+@media screen and (max-width: $break--m) {
+	.nav__logo {
+		display: none;
+	}
+	.navlist {
+		margin: 0 auto;
+		border-right: 1px solid $c-ultra-light;
+	}
+	.navlist__item {
+		border-left: 1px solid $c-ultra-light;
+	}
+}
+
 @media screen and (min-width: $break--m) {
 	.nav {
 		top: 0;
 		bottom: auto;
-		padding: 0 $pd--l;
+		border-bottom: 1px solid $c-ultra-light;
+		border-top: none;
 	}
 	
 	.nav__logo {
@@ -93,6 +113,12 @@ $h--m: 60px;
 			font-size: 14px;
 			height: $h--m;
 		}
+	}
+}
+
+@media screen and (min-width: $break--l) {
+	.nav {
+		padding: 0 $pd--l;
 	}
 }
 

@@ -3,6 +3,10 @@
 		<h3>Compétences</h3>
 		<p>Nous somme specialisés dans la conception et réalisation de site web, application mobile, logiciel pro.</p>
 	</header>
+
+	<div class="wrap-detail">
+			<p class="skill-detail">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque in sem odio. Sed cursus velit eleifend leo fringilla ultricies.</p>
+	</div>
 	
 	<ul class="skills-list">
 		<li class="skill">

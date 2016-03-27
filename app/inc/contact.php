@@ -8,22 +8,22 @@
 
 	<ul class="equipe">
 		<li class="equipier">
-			<img src="app/img/julien.jpg">
+			<img src="app/img/photo-julien.jpg">
 			<h4 class="equipier__nom">Julien Pecorino</h4>
-			<p class="equipier__job">UX Design, Front-end</p>
-			<p class="equipeir__contact">Skype <span>julien.pecorino</span></p>
+			<p class="equipier__job">Team leader<br>Design d'interface</p>
+			<p class="equipier__contact">Skype <span>julien.pecorino</span></p>
 		</li>		
 		<li class="equipier">
-			<img src="app/img/julien.jpg">
+			<img src="app/img/photo-thibaut.jpg">
 			<h4 class="equipier__nom">Thibaut Caroli</h4>
-			<p class="equipier__job">UX Design, Front-end</p>
-			<p class="equipeir__contact">Skype <span>julien.pecorino</span></p>
+			<p class="equipier__job">Design d'interface<br>Developpeur front-end</p>
+			<p class="equipier__contact">Skype <span>thibautcaroli</span></p>
 		</li>
 		<li class="equipier">
-			<img src="app/img/julien.jpg">
+			<img src="app/img/photo-yann.jpg">
 			<h4 class="equipier__nom">Yann Rolland</h4>
-			<p class="equipier__job">Développement, Back-end</p>
-			<p class="equipeir__contact">Skype <span>julien.pecorino</span></p>
+			<p class="equipier__job">Développeur<br> front-end & back-end</p>
+			<p class="equipier__contact">Skype <span>sirusor2000</span></p>
 		</li>
 	</ul>	
 </article>

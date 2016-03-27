@@ -1,7 +1,33 @@
 $(document).ready(function(){
 	slider_intro();
 	nav_scroll_to();
+	nav();
+	contact();
+	skills();
 });
+
+function skills() {
+	$('.skill').on('click', function(){
+		$('.skill.is-active').removeClass('is-active');
+		$(this).addClass('is-active');
+		$('.skills').addClass('mode-detail');
+		$('html, body').animate({'scrollTop': $('.skills').offset().top}, 250);
+	});
+}
+
+function contact() {
+	$('.equipe').waypoint(function(){
+		$(this.element).toggleClass('is-active');
+		console.log($(this));
+	}, {offset: '90%'});
+}
+
+
+function nav() {
+	$('.fluxi-id').waypoint(function(){
+		$('.nav__logo').toggleClass('is-active');
+	}, {offset: '5%'});
+}
 
 
 function slider_intro() {
