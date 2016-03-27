@@ -126,49 +126,27 @@
 // SKILLS
 
 .skills {
-	@extend %transition;
 	@extend .box--dark;
 	position: relative;
-	display: flex;
-	flex-direction: column;
-
-	&.mode-detail {
-		@include fill('viewport', true);
-		padding-bottom: 0;
-
-		.wrap-detail {
-			max-height: 400px;
-		}
-
-		.skills-list {
-			width: 100%;
-			max-width: 100%;
-
-			.skill {
-				width: 14.28%;
-			}
-
-			p {
-				display: none;
-			}
-		}
-	}
 }
 
 .wrap-detail {
-	transition: all 1s $ease-out-quart;
+	position: relative;
+	display: none;
+	width: 100%;
 	background: #fff;
-	max-height: 0;
-	overflow: hidden;
-	margin-top: auto;
+	transition: max-height 1s $ease-out-quart;
+
+	&.is-open {
+		display: block;
+	}
 }
 
 .skill-detail {
-	padding: 15%;
+	padding: $pd;
 }
 
 .skills-list {
-	@extend %transition;
 	@extend %list-reset;
 	@extend .wrap-list;
 	width: 80%;
@@ -199,7 +177,20 @@
 	}
 
 	&.is-active {
-		background: #fff;
+		background: rgba(#fff, 0.1);
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 7.5px 10px 7.5px;
+			border-color: transparent transparent #fff transparent;
+			transform: translateX(-50%);
+		}
 	}
 
 	div {
@@ -366,7 +357,7 @@
 		font-size: 120px;
 	}
 
-	.skills-list div {
+	.skills-list .skill div {
 		padding: $space--l;
 	}
 

@@ -1,3 +1,6 @@
+//READY
+
+
 $(document).ready(function(){
 	slider_intro();
 	nav_scroll_to();
@@ -6,12 +9,62 @@ $(document).ready(function(){
 	skills();
 });
 
+// RESIZE
+
+function debouncer( func , timeout ) {
+    var timeoutID;
+    var timeoutVAR;
+
+    if (timeout) {
+        timeoutVAR = timeout;
+    } else {
+        timeoutVAR = 200;
+    }
+
+    return function() {
+        var scope = this , args = arguments;
+        clearTimeout( timeoutID );
+        timeoutID = setTimeout( function () {
+            func.apply( scope , Array.prototype.slice.call( args ) );
+        }, timeoutVAR );
+    };
+
+}
+$( window ).bind( "resize", debouncer(debouncer_handler) );
+
+function debouncer_handler() {
+    $('.skill.is-active').click();
+}
+
+
+
+// FUNCTIONS
+
 function skills() {
-	$('.skill').on('click', function(){
+	$('.skill').on('click', function(e){
 		$('.skill.is-active').removeClass('is-active');
 		$(this).addClass('is-active');
-		$('.skills').addClass('mode-detail');
-		$('html, body').animate({'scrollTop': $('.skills').offset().top}, 250);
+
+		$('html, body').animate({'scrollTop': $(this).offset().top*0.7},250);
+
+		var modulo = Math.round($(this).parent().width()/$(this).width());
+		var thisIndex = $(this).index()+1;
+
+		calc_windowW();
+
+		if (windowW>759) {
+			var nbLines = Math.ceil($('.skill').length/modulo)-1;
+			if (thisIndex>modulo*nbLines) {
+				$('.wrap-detail').appendTo($('.skills-list'));
+			} else {
+				var index = Math.ceil(thisIndex/modulo);
+				$('.skill').eq(modulo*index-1).after($('.wrap-detail'));	
+			}
+		} else {
+			$('.skill').eq(thisIndex-1).after($('.wrap-detail'));
+		}
+
+		$('.wrap-detail').addClass('is-open');
 	});
 }
 
