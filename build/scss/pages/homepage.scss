@@ -4,16 +4,55 @@
 
 \*------------------------------*/
 
+.article-header {
+	font-family: $font-h;
+	padding: 0 $pd;
+	color: $c-main;
+	margin-bottom: $space--xl*2;
+
+	h3 {
+		text-transform: uppercase;
+		margin-bottom: $space--m;
+		font-weight: 900;
+	}
+
+	p {
+		max-width: 500px;
+	}
+}
+
+.box {
+	padding: $space--xl*2 0;
+}
+
+.box--dark {
+	@extend .box;
+	background: $c-main;
+
+	.article-header {
+		color: #fff;
+	}
+}
+
+.wrap-list {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	margin: 0 auto;
+	max-width: 80%;
+}
+
 // WELCOME
 
 .welcome {
 	@include flex(center, true);
 	@include fill('viewport', true);
+	max-height: 800px;
 	overflow: hidden;
 }
 
 .fluxi-id {
-	padding: 0 10%;
+	padding: 0 $pd;
 	width: 100%;
 	position: relative;
 	z-index: 50;
@@ -28,6 +67,7 @@
 		margin-top: 1rem;
 		color: $c-main;
 		font-weight: 300;
+		transform: translateX(-0.5%);
 
 		br {
 			display: none;
@@ -46,13 +86,13 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		padding-right: 10%;
+		padding-left: $pd;
+		margin-left: -10px;
 		opacity: 0;
 		font-size: 50px;
 		font-weight: 100;
 		color: lighten($c-highlight, 40%);
 		font-family: 'Avenir Next';
-		text-align: right;
 
 		&.is-active {
 			animation: 1s $ease-out-quart 1 1s forwards slideFromLeft !important;
@@ -87,23 +127,128 @@
 // SKILLS
 
 .skills {
-	background: $c-main;
+	@extend .box--dark;
+}
 
-	ul {
-		@extend %list-reset;
+.skills-list {
+	@extend %list-reset;
+	@extend .wrap-list;
+}
+
+.skill {
+	@extend h4;
+	position: relative;
+	width: 100%;
+	padding: $space--l;
+	text-align: center;
+	color: #fff;
+	background: darken($c-main, 8%);
+	cursor: pointer;
+
+	&::before {
+		content: "";
+		display: block;
+		padding-top: 100%;
+	}
+
+	&:nth-child(even) {
+		background: darken($c-main, 3%);
+	}
+
+	&:hover {
+		div img {
+			transform: scale(1.2);
+		}
+	}
+
+	div {
+		@include flex(center, true);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		padding: $space--m;
+	}
+
+	img {
+		@extend %transition;
+		display: block;
+	}
+
+	p {
+		@extend h5;
+		margin-top: $space--l;
 	}
 }
 
-.skills-categories {
-	@include fill('viewport');
-	display: flex;
+
+// UX DESIGN
+
+.uxdesign {
+	@extend .box;
 }
 
+
+// CONTACT
+
+.contact {
+	@extend .box--dark;
+}
+
+.main-contact {
+	@extend h4;
+	display: inline-block;
+	padding-bottom: 2px;
+	margin-top: $space--m;
+	color: $c-highlight;
+	text-decoration: none;
+	border-bottom: 1px solid $c-highlight;
+	-webkit-font-smoothing: antialiased;
+}
+
+.equipe {
+	@extend %list-reset;
+	@extend .wrap-list;
+	justify-content: space-between;
+}
+
+.equipier {
+	color: #fff;
+	text-align: center;
+
+	img {
+		width: 100%;
+		border-radius: 50%;
+		margin-bottom: $space--l;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.equipier__contact {
+		background: darken($c-main, 10%);
+
+		span {
+			color: $chighlight
+		}
+	}
+}
 
 // MEDIA QUERIES
 
 
 @media screen and (min-width: $break--m) {
+	.article-header {
+		padding: 0 $pd--l;
+		margin-bottom: $space--xl*3;
+	}
+
+	.box {
+		padding: $space--xl*3 0;
+	}
+
 	.fluxi-id {
 		img {
 			width: 150px;
@@ -114,12 +259,18 @@
 	}
 
 	.big-word .word {
+		padding-left: $pd--l;
 		font-size: 90px;
+	}
+
+	.skill {
+		width: 33.333%;
 	}
 }
 
 @media screen and (min-width: $break--l) {
 	.fluxi-id {
+		padding: 0 $pd--l;
 		img {
 			width: 200px;
 		}
@@ -148,6 +299,10 @@
 
 	.big-word .word {
 		font-size: 150px;
+	}
+
+	.skill {
+		width: 20%;
 	}
 }
 

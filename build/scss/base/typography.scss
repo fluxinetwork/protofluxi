@@ -44,7 +44,7 @@ h2 {
 $h3-font-sizes: (
   null  : 18px,
   medium: 20px,
-  large : 24px
+  large : 35px
 );
 h3 {
 	@include font-size($h3-font-sizes);
@@ -62,8 +62,15 @@ h4 {
   font-weight: 400;
 }
 
+$h5-font-sizes: (
+  null  : 13px,
+  medium: 15px,
+  large : 17px
+);
 h5 {
-
+  @include font-size($h5-font-sizes);
+  font-family: $font-h;
+  font-weight: 400;
 }
 
 h6 {
@@ -74,17 +81,19 @@ h6 {
 // CONTENT
 
 $p-font-sizes: (
-  null  : 16px,
-  medium: 18px,
-  large : 20px
+  null  : 12px,
+  medium: 14px,
+  large : 16px
 );
 p {
+  font-family: $font-txt;
 	margin-bottom: 0;
-  	@include font-size($p-font-sizes);
+  @include font-size($p-font-sizes);
+  -webkit-font-smoothing: antialiased;
 
-  	&:first-child {
-    	margin-top: 0;
-  	}
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 p a {
