@@ -45,23 +45,23 @@ function skills() {
 		$('.skill.is-active').removeClass('is-active');
 		$(this).addClass('is-active');
 
-		$('html, body').animate({'scrollTop': $(this).offset().top*0.7},250);
-
 		var modulo = Math.round($(this).parent().width()/$(this).width());
 		var thisIndex = $(this).index()+1;
 
 		calc_windowW();
 
 		if (windowW>759) {
+			$('html, body').animate({'scrollTop': $(this).offset().top*0.7},250);
 			var nbLines = Math.ceil($('.skill').length/modulo)-1;
 			if (thisIndex>modulo*nbLines) {
 				$('.wrap-detail').appendTo($('.skills-list'));
 			} else {
 				var index = Math.ceil(thisIndex/modulo);
-				$('.skill').eq(modulo*index-1).after($('.wrap-detail'));	
+				$('.skill').eq(modulo*index).after($('.wrap-detail'));	
 			}
 		} else {
-			$('.skill').eq(thisIndex-1).after($('.wrap-detail'));
+			$('html, body').animate({'scrollTop': $(this).offset().top*0.9},250);
+			$(this).after($('.wrap-detail'));
 		}
 
 		$('.wrap-detail').addClass('is-open');
