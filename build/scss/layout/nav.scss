@@ -48,6 +48,7 @@ $c-ultra-light: lighten($c-highlight, 40%);
 	@extend %transition;
 	cursor: pointer;
 	position: relative;
+	margin-left: 1px;
 
 	&::before {
 		@extend %transition;
@@ -59,9 +60,11 @@ $c-ultra-light: lighten($c-highlight, 40%);
 		background: $c-highlight;
 	}
 
-	&.is-active, &:hover {
+	&.is-active {
 		background: rgba(#413F68, 0.03);
+	}
 
+	&.is-active, &:hover {
 		&::before {
 			width: 100%;
 		}
