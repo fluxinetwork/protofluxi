@@ -30,7 +30,7 @@ function debouncer( func , timeout ) {
     };
 
 }
-$( window ).bind( "resize", debouncer(debouncer_handler) );
+//$( window ).bind( "resize", debouncer(debouncer_handler) );
 
 function debouncer_handler() {
     $('.skill.is-active').click();
@@ -57,10 +57,10 @@ function skills() {
 				$('.wrap-detail').appendTo($('.skills-list'));
 			} else {
 				var index = Math.ceil(thisIndex/modulo);
-				$('.skill').eq(modulo*index).after($('.wrap-detail'));	
+				$('.skill').eq(modulo*index-1).after($('.wrap-detail'));	
 			}
 		} else {
-			$('html, body').animate({'scrollTop': $(this).offset().top*0.9},250);
+			$('html, body').animate({'scrollTop': $(this).offset().top*0.8},250);
 			$(this).after($('.wrap-detail'));
 		}
 
